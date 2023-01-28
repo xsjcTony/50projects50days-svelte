@@ -1,31 +1,33 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath } from 'url'
 import eslintPlugin from '@nabla/vite-plugin-eslint'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+// @ts-expect-error tsconfig or `ambient.d.ts` reference error
+import { sveltekit } from '@sveltejs/kit/vite'
 import autoprefixer from 'autoprefixer'
 import flexBugFixes from 'postcss-flexbugs-fixes'
 import { visualizer } from 'rollup-plugin-visualizer'
 import tailwindcss from 'tailwindcss'
-import { defineConfig } from 'vite'
 import { configDefaults } from 'vitest/config'
+import type { UserConfig } from 'vite'
 
-
-export default defineConfig({
+const config: UserConfig = {
   plugins: [
-    svelte(),
+    sveltekit(),
     eslintPlugin({
       formatter: 'stylish',
       eslintOptions: { cache: false }
     }),
     visualizer({
+      filename: 'bundle-stats.html',
       gzipSize: true
     })
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('src', import.meta.url)),
-      '@assets': fileURLToPath(new URL('src/assets', import.meta.url)),
-      '@components': fileURLToPath(new URL('src/components', import.meta.url))
+      '@': fileURLToPath(new URL('src', import.meta.url))
     }
+  },
+  server: {
+    host: true
   },
   css: {
     postcss: {
@@ -40,11 +42,10 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly'
     }
   },
-  base: '/',
   test: {
     include: ['src/__tests__/**/*.test.ts'],
     coverage: {
-      provider: 'istanbul',
+      provider: 'c8',
       reporter: ['text', 'html'],
       exclude: [...configDefaults.coverage.exclude ?? []],
       all: true
@@ -52,4 +53,6 @@ export default defineConfig({
     setupFiles: [],
     environment: 'jsdom'
   }
-})
+}
+
+export default config
