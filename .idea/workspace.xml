@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1d411a0-876e-41b9-9b32-0c6911b8d4b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/routes/types.d.ts" afterDir="false" />
+    <list default="true" id="f1d411a0-876e-41b9-9b32-0c6911b8d4b9" name="Changes" comment="01-expanding-cards">
+      <change afterPath="$PROJECT_DIR$/src/routes/01-expanding-cards/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/50projects50days-svelte.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/50projects50days-svelte.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.node.js.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.node.js.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +35,7 @@
         <option value="+layout" />
         <option value="HTML File" />
         <option value="TypeScript File" />
+        <option value="+page.svelte" />
       </list>
     </option>
   </component>
@@ -61,8 +73,9 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
+    "settings.editor.selected.configurable": "preferences.editor",
     "ts.external.directory.path": "D:\\Projects\\50projects50days-svelte\\node_modules\\typescript\\lib",
+    "ts.rename.search.for.dynamic.occurrences": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -88,6 +101,9 @@
       <workItem from="1674936582620" duration="406000" />
       <workItem from="1674937014607" duration="1743000" />
       <workItem from="1674938789734" duration="8013000" />
+      <workItem from="1675149679555" duration="936000" />
+      <workItem from="1675235584909" duration="1033000" />
+      <workItem from="1675236637044" duration="12623000" />
     </task>
     <task id="LOCAL-00001" summary="Startup">
       <created>1674945886029</created>
@@ -105,7 +121,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Startup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Startup" />
+    <MESSAGE value="01-expanding-cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="01-expanding-cards" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

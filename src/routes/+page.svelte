@@ -1,5 +1,9 @@
 <script lang="ts">
-  import type { Project } from './types'
+  interface Project {
+    title: string
+    link: `/${string}`
+  }
+
 
   const projects: Project[] = [
     {
@@ -10,13 +14,15 @@
 </script>
 
 
-{#each projects as { title, link }}
-    <a href="{link}" target="_blank" rel="noreferrer">{title}</a>
-{/each}
+<main class="grid place-items-center min-h-full">
+    {#each projects as { title, link }}
+        <a href="{link}" target="_blank" rel="noreferrer">{title}</a>
+    {/each}
+</main>
 
 
 <style lang="scss">
     a {
-        @apply underline text-pink-400;
+        @apply underline text-pink;
     }
 </style>

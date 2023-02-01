@@ -1,4 +1,3 @@
-import { fileURLToPath } from 'url'
 import eslintPlugin from '@nabla/vite-plugin-eslint'
 // @ts-expect-error tsconfig or `ambient.d.ts` reference error
 import { sveltekit } from '@sveltejs/kit/vite'
@@ -11,6 +10,7 @@ import type { UserConfig } from 'vite'
 
 const config: UserConfig = {
   plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     sveltekit(),
     eslintPlugin({
       formatter: 'stylish',
@@ -21,11 +21,6 @@ const config: UserConfig = {
       gzipSize: true
     })
   ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('src', import.meta.url))
-    }
-  },
   server: {
     host: true
   },
