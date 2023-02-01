@@ -24,6 +24,8 @@
 </script>
 
 
+<div on:click={() => void 0}>123</div>
+
 <main class="grid min-h-full place-items-center">
     <div class="w-[90vw] h-[80vh] flex gap-x-5">
         {#each items as { name, src }, index}
@@ -36,7 +38,7 @@
                 style:background-image={`url(${src})`}
             >
                 <span
-                    class="absolute bottom-5 left-5 whitespace-nowrap text-2xl font-bold text-white transition-opacity duration-300 ease-in"
+                    class="absolute bottom-5 left-5 whitespace-nowrap text-2xl font-bold text-white transition-opacity duration-300 ease-in [text-shadow:#000_1px_0_10px]"
                     class:opacity-1={isActive(index)}
                     class:opacity-0={!isActive(index)}
                     class:delay-[.4s]={isActive(index)}
