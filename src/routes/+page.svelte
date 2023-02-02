@@ -7,17 +7,25 @@
 
   const projects: Project[] = [
     {
-      title: '01 - Expanding Cards',
-      link: '/01-expanding-cards'
+      title: 'Expanding Cards',
+      link: '/expanding-cards'
+    },
+    {
+      title: 'Progress Steps',
+      link: '/progress-steps'
     }
   ]
 </script>
 
 
 <main class="grid place-items-center min-h-full">
-    {#each projects as { title, link }}
-        <a href="{link}" target="_blank" rel="noreferrer">{title}</a>
-    {/each}
+    <div class="flex flex-col">
+        {#each projects as { title, link }, index}
+            <a href="{link}" target="_blank" rel="noreferrer">
+                {(index + 1).toString(10).padStart(2, '0')} - {title}
+            </a>
+        {/each}
+    </div>
 </main>
 
 

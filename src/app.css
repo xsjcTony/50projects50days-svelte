@@ -5,6 +5,6 @@
 
 html,
 body {
+    @apply h-full bg-[#222];
     font-family: 'Muli', sans-serif;
-    height: 100%;
 }
