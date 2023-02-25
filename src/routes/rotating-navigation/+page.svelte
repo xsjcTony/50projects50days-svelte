@@ -1,5 +1,11 @@
 <script lang="ts">
   import huTaoImg from '@/assets/images/genshin-impact-hu-tao.webp'
+
+
+  let navOpened = false
+
+  const openNav = () => void (navOpened = true)
+  const closeNav = () => void (navOpened = false)
 </script>
 
 
@@ -7,7 +13,10 @@
   <title>Rotating Navigation</title>
 </svelte:head>
 
-<main class="grid min-h-full place-items-center p-12.5">
+<main
+  class="grid min-h-full origin-top-left place-items-center p-12.5 bg-[#222] transition-transform ease-linear duration-500"
+  class:-rotate-[20deg]={navOpened}
+>
   <div class="max-w-[1000px]">
     <h1 class="text-5xl">Rotating Navigation</h1>
     <p class="mb-5 italic text-gray-400">Aelita</p>
@@ -24,11 +33,46 @@
   </div>
 </main>
 
-<div class="fixed -top-25 -left-25 rounded-full w-50 h-50 bg-pink">
-  <span class="absolute top-1/2 left-1/2 inline-flex h-20 w-20 items-center justify-center text-3xl">
-    <i class="fa-solid fa-bars cursor-pointer"></i>
+<div
+  class="fixed -top-25 -left-25 rounded-full transition-transform duration-500 ease-linear w-50 h-50 bg-pink"
+  class:-rotate-90={navOpened}
+>
+  <span
+    class="absolute top-1/2 left-1/2 inline-flex h-20 w-20 items-center justify-center text-3xl"
+    on:click={openNav}
+    on:keyup={openNav}
+  >
+    <i class="cursor-pointer fa-solid fa-bars"></i>
   </span>
-  <span class="absolute top-1/2 left-5 inline-flex h-20 w-20 items-center justify-center text-3xl">
-    <i class="fa-solid fa-xmark cursor-pointer"></i>
+  <span
+    class="absolute top-1/2 left-5 inline-flex h-20 w-20 items-center justify-center text-3xl"
+    on:click={closeNav}
+    on:keyup={closeNav}
+  >
+    <i class="cursor-pointer fa-solid fa-xmark"></i>
   </span>
 </div>
+
+<nav class="fixed bottom-20 left-10">
+  <ul class="flex flex-col gap-y-10 text-lg">
+    <li class="flex items-center gap-x-5 transition-transform duration-500 {navOpened ? 'delay-500' : '-translate-x-full'}">
+      <i class="fa-solid fa-house"></i>
+      Home
+    </li>
+    <li class="ml-5 flex items-center gap-x-5 transition-transform duration-500 {navOpened ? 'delay-500' : '-translate-x-[150%]'}">
+      <i class="fa-solid fa-user"></i>
+      About
+    </li>
+    <li class="ml-10 flex items-center gap-x-5 transition-transform duration-500 {navOpened ? 'delay-500' : '-translate-x-[200%]'}">
+      <i class="fa-solid fa-envelope"></i>
+      Contact
+    </li>
+  </ul>
+</nav>
+
+
+<style lang="scss">
+    :global(html, body) {
+        @apply overflow-x-hidden bg-gray-800;
+    }
+</style>
