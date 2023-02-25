@@ -24,6 +24,10 @@
 </script>
 
 
+<svelte:head>
+    <title>Expanding Cards</title>
+</svelte:head>
+
 <main class="grid min-h-full place-items-center">
     <div class="w-[90vw] h-[80vh] flex gap-x-5">
         {#each items as { name, src }, index}

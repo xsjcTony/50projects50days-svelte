@@ -13,6 +13,10 @@
     {
       title: 'Progress Steps',
       link: '/progress-steps'
+    },
+    {
+      title: 'Rotating Navigation',
+      link: '/rotating-navigation'
     }
   ]
 </script>

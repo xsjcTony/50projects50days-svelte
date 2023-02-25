@@ -10,6 +10,10 @@ const decreaseStep = () => void (currentStep > 1 && (currentStep = currentStep -
 </script>
 
 
+<svelte:head>
+  <title>Progress Steps</title>
+</svelte:head>
+
 <main class="grid min-h-full place-items-center">
   <div class="flex w-3/5 flex-col items-center gap-y-10">
     <Steps steps={steps} currentStep={currentStep} />
