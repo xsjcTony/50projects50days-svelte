@@ -1,11 +1,11 @@
 <script lang="ts">
   let expanded = true
 
-  let inputEl: HTMLInputElement
+  let inputEl: HTMLInputElement | undefined
 
   const toggleInput = (): void => {
     expanded = !expanded
-    expanded && inputEl.focus()
+    expanded && inputEl?.focus()
   }
 </script>
 
