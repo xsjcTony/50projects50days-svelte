@@ -10,6 +10,10 @@
 </script>
 
 
+<svelte:head>
+  <title>Hidden Search</title>
+</svelte:head>
+
 <main class="grid min-h-full place-items-center text-pink">
   <div class="hidden-search-container">
     <input
