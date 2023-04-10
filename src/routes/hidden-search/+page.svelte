@@ -1,5 +1,5 @@
 <script lang="ts">
-  let expanded = true
+  let expanded = false
 
   let inputEl: HTMLInputElement | undefined
 
@@ -16,6 +16,7 @@
       type="text"
       class="text-xl bg-[#111] py-2 focus-visible:outline-none transition-[padding,width] duration-300 relative {expanded ? 'w-75 px-4' : 'w-0'}"
       bind:this={inputEl}
+      placeholder="Search..."
     />
     <i class="separator" class:!w-0={!expanded}></i>
     <button
